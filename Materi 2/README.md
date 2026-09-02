@@ -25,17 +25,20 @@ Visual Studio Code (VS Code) adalah editor teks utama yang digunakan untuk menul
   1. Kunjungi laman resmi [code.visualstudio.com](https://code.visualstudio.com/).
   2. Unduh _installer_ sesuai dengan sistem operasi Anda (Windows, macOS, atau Linux).
   3. Jalankan file _installer_ dan ikuti petunjuk pemasangan hingga selesai (pada Windows, centang opsi _Add "Open with Code" to context menu_).
-- **Rekomendasi Ekstensi:**
+- **Rekomendasi Extension:**
   - **Tailwind CSS IntelliSense**: Membantu _auto-complete_ class Tailwind.
   - **ESLint**: Membantu mendeteksi kesalahan sintaksis kode.
   - **Prettier - Code formatter**: Merapikan format kode secara otomatis.
 - **Cek Instalasi:**
   Buka terminal (Command Prompt / PowerShell / Terminal) lalu jalankan:
+
   ```bash
   code --version
   ```
+
   Jika nomor versi tampil, VS Code siap digunakan.
   Contoh :
+
   ![alt text](image.png)
 
 #### 2. Git CLI dan Konfigurasi Akun GitHub
@@ -43,7 +46,7 @@ Visual Studio Code (VS Code) adalah editor teks utama yang digunakan untuk menul
 Git digunakan untuk sistem pengontrol versi (_version control_). Panduan ini mengasumsikan Anda sudah memiliki akun [GitHub](https://github.com/).
 
 - **Langkah Instalasi:**
-  1. Kunjungi laman resmi [git-scm.com/downloads](https://git-scm.com/downloads).
+  1. Kunjungi laman resmi [klik disini](https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.5/Git-2.55.0.5-64-bit.exe).
   2. Unduh _installer_ sesuai sistem operasi Anda, lalu jalankan instalasi menggunakan pengaturan _default_.
 - **Cek Instalasi Git:**
   ```bash
@@ -52,8 +55,8 @@ Git digunakan untuk sistem pengontrol versi (_version control_). Panduan ini men
 - **Konfigurasi Identitas Git:**
   Hubungkan identitas lokal Git dengan nama dan email akun GitHub pribadi Anda melalui perintah:
   ```bash
-  git config --global user.name "Nama Lengkap atau Username GitHub"
-  git config --global user.email "email_akun_github@example.com"
+  git config --global user.name "[username github kamu]"
+  git config --global user.email "[email github kamu]"
   ```
 - **Cek Konfigurasi Git:**
   Pastikan identitas berhasil tersimpan dengan menjalankan:
@@ -61,6 +64,12 @@ Git digunakan untuk sistem pengontrol versi (_version control_). Panduan ini men
   git config --list
   ```
   Periksa baris `user.name` dan `user.email` pada output yang ditampilkan.
+
+  Contoh:
+
+  ![alt text](image-1.png)
+
+  
 
 #### 3. Node.js (JavaScript Runtime)
 
@@ -102,7 +111,7 @@ Buat proyek Next.js sebelum kelas dimulai agar waktu sesi praktik dapat difokusk
 1. Buka terminal di direktori kerja yang Anda inginkan, lalu jalankan perintah:
 
    ```bash
-   pnpm create next-app frontend --disable-git
+   pnpm create next-app frontend-lbe-alpro
    ```
 
 2. Pada pertanyaan konfigurasi interaktif yang muncul di terminal, pilih opsi berikut:
@@ -117,7 +126,7 @@ Buat proyek Next.js sebelum kelas dimulai agar waktu sesi praktik dapat difokusk
 3. Masuk ke dalam direktori proyek dan jalankan _development server_:
 
    ```bash
-   cd frontend
+   cd frontend-lbe-alpro
    pnpm dev
    ```
 
@@ -130,27 +139,17 @@ Buat proyek Next.js sebelum kelas dimulai agar waktu sesi praktik dapat difokusk
 
 Internet adalah jaringan dari banyak jaringan komputer yang saling terhubung. Website adalah layanan di atas internet yang dibuka melalui browser menggunakan URL.
 
+![alt text](image-2.png)
+
 Frontend adalah bagian aplikasi yang dilihat dan digunakan langsung oleh pengguna. Frontend menampilkan data, menerima interaksi pengguna, lalu mengirim request ke backend bila aplikasi membutuhkan data atau proses dari server.
 
-```text
-Pengguna
-    |
-    v
-Browser / Frontend
-    |
-    | HTTP request dan response
-    v
-Backend / Server
-    |
-    v
-Database atau layanan lain
-```
+![alt text](diagram.drawio.png)
 
 Istilah penting:
 
 - **Domain** adalah nama yang mudah dibaca manusia untuk sebuah server, misalnya `example.com`.
 - **Hosting** adalah layanan dan sumber daya server yang membuat website atau aplikasi dapat diakses dari internet.
-- **URL** adalah alamat lengkap menuju resource tertentu, misalnya `https://example.com/posts/1`.
+- **URL (Uniform Resource Locator)** adalah alamat lengkap menuju resource tertentu, misalnya `https://senopati.its.ac.id/`.
 - **DNS** menerjemahkan domain menjadi alamat IP agar browser dapat menemukan server.
 - **Konten** adalah informasi yang ditampilkan kepada pengguna, seperti teks, gambar, video, dan data produk.
 
@@ -159,7 +158,7 @@ Contoh bagian URL:
 ```text
 https://blog.example.com/posts/42?mode=ringkas#komentar
 └─┬─┘   └──────┬───────┘└───┬───┘ └────┬────┘ └───┬────┘
-skema       host/domain       path       query       fragment
+skema     host/domain     path       query     fragment
 ```
 
 Domain hanya merupakan bagian dari URL. URL dapat menunjuk ke halaman, gambar, file, atau endpoint API tertentu pada sebuah domain.
@@ -175,11 +174,13 @@ Ketika pengguna membuka sebuah URL, browser melakukan proses berikut:
 5. Server mengirim HTTP response yang berisi status, header, dan data.
 6. Browser memproses HTML, CSS, JavaScript, gambar, font, dan aset lain.
 
-![Alur permintaan halaman web](./assets/alur-web.svg)
+Ilustrasi low cortisolnya bisa Anda lihat [disini](https://howdns.works/ep1/)
+
+![Alur permintaan halaman web](./assets/alur-web.png)
 
 Browser memiliki rendering engine yang mengubah dokumen dan style menjadi tampilan di layar.
 
-![Tahapan browser merender halaman](./assets/cara-browser-render.svg)
+![Tahapan browser merender halaman](./assets/cara-browser-render.png)
 
 Proses rendering yang disederhanakan:
 
