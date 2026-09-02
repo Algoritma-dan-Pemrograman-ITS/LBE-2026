@@ -43,7 +43,8 @@ Visual Studio Code (VS Code) adalah editor teks utama yang digunakan untuk menul
   Contoh :
 
   <p align="center">
-    <img src="image.png" alt="Verifikasi Instalasi VS Code" />
+    <img src="image.png" alt="Verifikasi Instalasi VS Code" /><br>
+    <em>Gambar 1: Verifikasi instalasi dan versi Visual Studio Code pada terminal</em>
   </p>
 
 #### 2. Git CLI dan Konfigurasi Akun GitHub
@@ -75,7 +76,8 @@ Git digunakan untuk sistem pengontrol versi (_version control_). Panduan ini men
   Contoh:
 
   <p align="center">
-    <img src="image-1.png" alt="Verifikasi Konfigurasi Git" />
+    <img src="image-1.png" alt="Verifikasi Konfigurasi Git" /><br>
+    <em>Gambar 2: Verifikasi konfigurasi username dan email akun GitHub pada Git CLI</em>
   </p>
 
 #### 3. Node.js (JavaScript Runtime)
@@ -163,13 +165,15 @@ Buat proyek Next.js sebelum kelas dimulai agar waktu sesi praktik dapat difokusk
 Internet adalah jaringan dari banyak jaringan komputer yang saling terhubung. Website adalah layanan di atas internet yang dibuka melalui browser menggunakan URL.
 
 <p align="center">
-  <img src="image-2.png" alt="Ilustrasi Internet dan Website" />
+  <img src="image-2.png" alt="Ilustrasi Internet dan Website" /><br>
+  <em>Gambar 3: Ilustrasi jaringan internet</em>
 </p>
 
 Frontend adalah bagian aplikasi yang dilihat dan digunakan langsung oleh pengguna. Frontend menampilkan data, menerima interaksi pengguna, lalu mengirim request ke backend bila aplikasi membutuhkan data atau proses dari server.
 
 <p align="center">
-  <img src="diagram.drawio.png" alt="Diagram Frontend dan Backend" />
+  <img src="diagram.drawio.png" alt="Diagram Frontend dan Backend" /><br>
+  <em>Gambar 4: Diagram hubungan dan alur kerja antara Frontend dan Backend</em>
 </p>
 
 Istilah penting:
@@ -204,13 +208,15 @@ Ketika pengguna membuka sebuah URL, browser melakukan proses berikut:
 Ilustrasi low cortisolnya bisa Anda lihat [disini](https://howdns.works/ep1/)
 
 <p align="center">
-  <img src="./assets/alur-web.png" alt="Alur permintaan halaman web" />
+  <img src="./assets/alur-web.png" alt="Alur permintaan halaman web" /><br>
+  <em>Gambar 5: Alur permintaan dan pemuatan halaman web oleh browser</em>
 </p>
 
 Browser memiliki rendering engine yang mengubah dokumen dan style menjadi tampilan di layar.
 
 <p align="center">
-  <img src="./assets/cara-browser-render.png" alt="Tahapan browser merender halaman" />
+  <img src="./assets/cara-browser-render.png" alt="Tahapan browser merender halaman" /><br>
+  <em>Gambar 6: Tahapan browser merender halaman (DOM, CSSOM, Render Tree, Layout, Paint)</em>
 </p>
 
 Proses rendering yang disederhanakan:
@@ -281,7 +287,8 @@ Elemen block seperti `div`, `p`, dan `section` biasanya memulai baris baru. Elem
 Setiap elemen visual dapat dipahami sebagai sebuah kotak. Kotak tersebut terdiri dari content, padding, border, dan margin.
 
 <p align="center">
-  <img src="./assets/box-model.svg" alt="Diagram CSS box model" />
+  <img src="./assets/box-model.svg" alt="Diagram CSS box model" /><br>
+  <em>Gambar 7: Diagram CSS Box Model (Content, Padding, Border, Margin)</em>
 </p>
 
 | Bagian  | Kegunaan                                           |
@@ -318,7 +325,8 @@ Gunakan Flexbox ketika elemen tersusun dalam satu arah utama. Gunakan Grid ketik
 | Layout halaman beberapa kolom | Grid    | Sidebar dan konten utama     |
 
 <p align="center">
-  <img src="image-3.png" alt="Contoh Layout Flexbox dan Grid" />
+  <img src="image-3.png" alt="Contoh Layout Flexbox dan Grid" /><br>
+  <em>Gambar 8: Ilustrasi susunan layout Flexbox (satu dimensi) dan Grid (dua dimensi)</em>
 </p>
 
 Contoh implementasi lengkap langsung copy-paste di`app/page.tsx`:
