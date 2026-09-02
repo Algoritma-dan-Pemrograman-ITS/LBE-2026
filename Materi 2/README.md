@@ -6,12 +6,14 @@ Di akhir materi, peserta akan membuat halaman daftar post yang mengambil data da
 
 ## 1. Rencana Pembelajaran
 
-| Sesi | Topik                                |
-| ---- | ------------------------------------ |
-| 1    | Fondasi website, HTML, dan layouting |
-| 2    | JavaScript, React, dan Next.js       |
-| 3    | REST API, form, dan data fetching    |
-| 4    | Browser storage, SEO, dan praktik    |
+| Sesi  | Modul / Topik Utama                                                       | Cakupan Materi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :---: | :------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **1** | [**Fondasi Website, HTML, & Tailwind CSS**](#2-dasar-website-dan-browser) | • [1.1 Persiapan dan Instalasi Dependencies](#11-persiapan-dan-instalasi-dependencies)<br>• [1.2 Inisialisasi Proyek Next.js](#12-inisialisasi-proyek-nextjs)<br>• [2. Dasar Website dan Browser](#2-dasar-website-dan-browser)<br>&nbsp;&nbsp;↳ [2.1 Internet, website, dan frontend](#21-internet-website-dan-frontend)<br>&nbsp;&nbsp;↳ [2.2 Cara browser memuat halaman](#22-cara-browser-memuat-halaman)<br>&nbsp;&nbsp;↳ [2.3 Struktur HTML dan aksesibilitas](#23-struktur-html-dan-aksesibilitas)<br>• [3. Styling dengan Tailwind CSS](#3-styling-dengan-tailwind-css)<br>&nbsp;&nbsp;↳ [3.1 Box model](#31-box-model)<br>&nbsp;&nbsp;↳ [3.2 Utility class Tailwind](#32-utility-class-tailwind)<br>&nbsp;&nbsp;↳ [3.3 Flexbox, Grid, dan responsive design](#33-flexbox-grid-dan-responsive-design) |
+| **2** | [**JavaScript, React, dan Next.js**](#4-javascript-react-dan-nextjs)      | • [4. JavaScript, React, dan Next.js](#4-javascript-react-dan-nextjs)<br>&nbsp;&nbsp;↳ [4.1 JavaScript dan TypeScript](#41-javascript-dan-typescript)<br>&nbsp;&nbsp;↳ [4.2 React dan Next.js](#42-react-dan-nextjs)<br>&nbsp;&nbsp;↳ [4.3 State, effect, dan prop drilling](#43-state-effect-dan-prop-drilling)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **3** | [**REST API dan Pengelolaan Data**](#5-rest-api-dan-pengelolaan-data)     | • [5. REST API dan Pengelolaan Data](#5-rest-api-dan-pengelolaan-data)<br>&nbsp;&nbsp;↳ [5.1 Client, server, dan HTTP](#51-client-server-dan-http)<br>&nbsp;&nbsp;↳ [5.2 Form native dan React Hook Form](#52-form-native-dan-react-hook-form)<br>&nbsp;&nbsp;↳ [5.3 Data fetching dan caching](#53-data-fetching-dan-caching)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **4** | [**Browser Storage, SEO, dan Praktik**](#6-browser-storage-dan-seo)       | • [6. Browser Storage dan SEO](#6-browser-storage-dan-seo)<br>&nbsp;&nbsp;↳ [6.1 Browser storage](#61-browser-storage)<br>&nbsp;&nbsp;↳ [6.2 Metadata dan gambar Next.js](#62-metadata-dan-gambar-nextjs)<br>• [7. Praktik: Post Explorer](#7-praktik-post-explorer)<br>&nbsp;&nbsp;↳ [7.1 Mengganti halaman utama](#71-mengganti-halaman-utama)<br>&nbsp;&nbsp;↳ [7.2 Alur praktik](#72-alur-praktik)<br>&nbsp;&nbsp;↳ [7.3 Verifikasi hasil](#73-verifikasi-hasil)<br>• [8. Checklist Pemahaman](#8-checklist)<br>• [Referensi & Dokumentasi](#referensi)                                                                                                                                                                                                                                                   |
+
+---
 
 ### 1.1 Persiapan dan Instalasi Dependencies
 
@@ -26,6 +28,7 @@ Visual Studio Code (VS Code) adalah editor teks utama yang digunakan untuk menul
   2. Unduh _installer_ sesuai dengan sistem operasi Anda (Windows, macOS, atau Linux).
   3. Jalankan file _installer_ dan ikuti petunjuk pemasangan hingga selesai (pada Windows, centang opsi _Add "Open with Code" to context menu_).
 - **Rekomendasi Extension:**
+  - **Live Server**: Menjalankan server lokal dengan fitur _live reload_ untuk file HTML/CSS/JS statis secara langsung dari VS Code.
   - **Tailwind CSS IntelliSense**: Membantu _auto-complete_ class Tailwind.
   - **ESLint**: Membantu mendeteksi kesalahan sintaksis kode.
   - **Prettier - Code formatter**: Merapikan format kode secara otomatis.
@@ -39,7 +42,9 @@ Visual Studio Code (VS Code) adalah editor teks utama yang digunakan untuk menul
   Jika nomor versi tampil, VS Code siap digunakan.
   Contoh :
 
-  ![alt text](image.png)
+  <p align="center">
+    <img src="image.png" alt="Verifikasi Instalasi VS Code" />
+  </p>
 
 #### 2. Git CLI dan Konfigurasi Akun GitHub
 
@@ -60,16 +65,18 @@ Git digunakan untuk sistem pengontrol versi (_version control_). Panduan ini men
   ```
 - **Cek Konfigurasi Git:**
   Pastikan identitas berhasil tersimpan dengan menjalankan:
+
   ```bash
   git config --list
   ```
+
   Periksa baris `user.name` dan `user.email` pada output yang ditampilkan.
 
   Contoh:
 
-  ![alt text](image-1.png)
-
-  
+  <p align="center">
+    <img src="image-1.png" alt="Verifikasi Konfigurasi Git" />
+  </p>
 
 #### 3. Node.js (JavaScript Runtime)
 
@@ -133,17 +140,37 @@ Buat proyek Next.js sebelum kelas dimulai agar waktu sesi praktik dapat difokusk
 4. **Verifikasi Akhir:**
    Buka browser dan kunjungi [http://localhost:3000](http://localhost:3000). Jika halaman pembuka Next.js berhasil tampil, seluruh dependensi dan lingkungan pengembangan Anda sudah siap digunakan.
 
+5. **Hentikan Server & Siapkan Folder Praktik Dasar HTML/CSS:**
+   Setelah memastikan project Next.js berjalan dengan baik, hentikan server yang sedang berjalan dengan menekan kombinasi tombol `Ctrl + C` pada terminal.
+
+   Kemudian, keluar dari direktori `frontend-lbe-alpro` dan buat direktori baru bernama `belajar-html-css-alpro` di luar direktori project Next.js untuk sesi eksplorasi dan latihan dasar HTML & CSS:
+
+   ```bash
+   # Tekan Ctrl + C pada terminal untuk menghentikan server
+
+   # Keluar dari folder frontend-lbe-alpro
+   cd ..
+
+   # Buat direktori belajar-html-css-alpro dan masuk ke dalamnya
+   mkdir belajar-html-css-alpro
+   cd belajar-html-css-alpro
+   ```
+
 ## 2. Dasar Website dan Browser
 
 ### 2.1 Internet, website, dan frontend
 
 Internet adalah jaringan dari banyak jaringan komputer yang saling terhubung. Website adalah layanan di atas internet yang dibuka melalui browser menggunakan URL.
 
-![alt text](image-2.png)
+<p align="center">
+  <img src="image-2.png" alt="Ilustrasi Internet dan Website" />
+</p>
 
 Frontend adalah bagian aplikasi yang dilihat dan digunakan langsung oleh pengguna. Frontend menampilkan data, menerima interaksi pengguna, lalu mengirim request ke backend bila aplikasi membutuhkan data atau proses dari server.
 
-![alt text](diagram.drawio.png)
+<p align="center">
+  <img src="diagram.drawio.png" alt="Diagram Frontend dan Backend" />
+</p>
 
 Istilah penting:
 
@@ -176,11 +203,15 @@ Ketika pengguna membuka sebuah URL, browser melakukan proses berikut:
 
 Ilustrasi low cortisolnya bisa Anda lihat [disini](https://howdns.works/ep1/)
 
-![Alur permintaan halaman web](./assets/alur-web.png)
+<p align="center">
+  <img src="./assets/alur-web.png" alt="Alur permintaan halaman web" />
+</p>
 
 Browser memiliki rendering engine yang mengubah dokumen dan style menjadi tampilan di layar.
 
-![Tahapan browser merender halaman](./assets/cara-browser-render.png)
+<p align="center">
+  <img src="./assets/cara-browser-render.png" alt="Tahapan browser merender halaman" />
+</p>
 
 Proses rendering yang disederhanakan:
 
@@ -249,7 +280,9 @@ Elemen block seperti `div`, `p`, dan `section` biasanya memulai baris baru. Elem
 
 Setiap elemen visual dapat dipahami sebagai sebuah kotak. Kotak tersebut terdiri dari content, padding, border, dan margin.
 
-![Diagram CSS box model](./assets/box-model.svg)
+<p align="center">
+  <img src="./assets/box-model.svg" alt="Diagram CSS box model" />
+</p>
 
 | Bagian  | Kegunaan                                           |
 | ------- | -------------------------------------------------- |
@@ -265,7 +298,7 @@ Padding memberi ruang di dalam elemen. Margin memberi jarak antara satu elemen d
 Tailwind CSS menyediakan utility class yang dapat dirangkai langsung pada elemen.
 
 ```tsx
-<article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+<article className="rounded-xl border border-slate-200 bg-red-500 p-4 shadow-sm">
   <h2 className="text-lg font-semibold text-slate-900">Judul artikel</h2>
   <p className="mt-2 text-sm text-slate-600">Ringkasan artikel.</p>
 </article>
@@ -284,35 +317,119 @@ Gunakan Flexbox ketika elemen tersusun dalam satu arah utama. Gunakan Grid ketik
 | Daftar card                   | Grid    | Daftar post atau produk      |
 | Layout halaman beberapa kolom | Grid    | Sidebar dan konten utama     |
 
-```tsx
-{
-  /* Flexbox untuk navigasi */
-}
-<nav className="flex items-center justify-between gap-4">...</nav>;
+<p align="center">
+  <img src="image-3.png" alt="Contoh Layout Flexbox dan Grid" />
+</p>
 
-{
-  /* Grid untuk daftar card */
-}
-<section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-  ...
-</section>;
-```
-
-Tailwind menggunakan pendekatan mobile-first. Class tanpa prefix berlaku untuk layar kecil. Class dengan prefix breakpoint berlaku mulai ukuran tersebut dan ke atas.
+Contoh implementasi lengkap langsung copy-paste di`app/page.tsx`:
 
 ```tsx
-<h1 className="text-2xl md:text-4xl">Daftar Artikel</h1>
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-slate-50 p-6 text-slate-900">
+      {/* Flexbox untuk navigasi */}
+      <nav className="flex items-center justify-between rounded-xl bg-white p-4 shadow-sm">
+        <span className="text-lg font-bold text-slate-900">Alpro Dev</span>
+        <div className="flex items-center gap-4">
+          <a
+            href="#"
+            className="text-sm font-medium text-slate-600 hover:text-slate-900">
+            Beranda
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-slate-600 hover:text-slate-900">
+            Artikel
+          </a>
+          <button
+            type="button"
+            className="rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700">
+            Masuk
+          </button>
+        </div>
+      </nav>
+
+      {/* Grid untuk daftar card */}
+      <section className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Artikel 1</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Contoh penerapan Flexbox dan Grid pada Next.js dengan Tailwind CSS.
+          </p>
+        </article>
+        <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Artikel 2</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Layout responsif otomatis menyesuaikan ukuran layar mobile hingga
+            desktop.
+          </p>
+        </article>
+        <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Artikel 3</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Menggabungkan elemen semantic HTML dengan utility classes Tailwind.
+          </p>
+        </article>
+      </section>
+    </main>
+  );
+}
 ```
 
-| Prefix | Lebar minimum |
-| ------ | ------------: |
-| `sm`   |        640 px |
-| `md`   |        768 px |
-| `lg`   |       1024 px |
-| `xl`   |       1280 px |
-| `2xl`  |       1536 px |
+Tailwind CSS menerapkan pendekatan **mobile-first**. Artinya:
 
-Mulailah dari layout yang nyaman di layar kecil. Tambahkan perubahan untuk layar lebih besar hanya jika diperlukan.
+- Class dasar **tanpa prefix** (misal: `grid-cols-1`, `text-2xl`) menjadi aturan _default_ untuk semua ukuran layar (terutama layar smartphone/mobile).
+- Class dengan **prefix breakpoint** (seperti `sm:`, `md:`, `lg:`) hanya akan aktif ketika lebar layar browser telah mencapai batas minimum (`min-width`) breakpoint tersebut.
+
+| Prefix | Lebar Minimum (`min-width`) | Target Perangkat Tipikal                  |
+| :----: | :-------------------------: | :---------------------------------------- |
+|  `sm`  |           `640px`           | Smartphone _landscape_ / Small tablet     |
+|  `md`  |           `768px`           | Tablet / iPad _portrait_                  |
+|  `lg`  |          `1024px`           | Laptop / Desktop standar                  |
+|  `xl`  |          `1280px`           | Desktop monitor / Layar lebar             |
+| `2xl`  |          `1536px`           | Monitor resolusi tinggi (_large desktop_) |
+
+#### Contoh Bedah Kode Responsive Grid:
+
+Perhatikan potongan kode `<section>` pada contoh `app/page.tsx` di atas:
+
+```tsx
+<section className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+```
+
+- **Layar HP / Mobile (< 768px):** Aturan dasar `grid-cols-1` berlaku, sehingga artikel tersusun ke bawah dalam **1 kolom**.
+- **Layar Tablet (≥ 768px):** Breakpoint `md:grid-cols-2` mulai aktif, sehingga artikel otomatis tersusun menjadi **2 kolom**.
+- **Layar Desktop / Laptop (≥ 1024px):** Breakpoint `lg:grid-cols-3` aktif, sehingga artikel otomatis tersusun menjadi **3 kolom**.
+
+#### Cara Menguji dan Melihat Perubahan Responsif di Browser:
+
+Untuk melihat perubahan tampilan secara langsung tanpa perlu mengganti perangkat:
+
+1. Buka browser dan pastikan server Next.js Anda sedang berjalan di `http://localhost:3000`.
+2. Buka **Developer Tools** dengan cara **klik kanan** di sembarang area halaman lalu pilih **Inspect** (atau tekan shortcut `F12` / `Ctrl + Shift + I` pada Windows, `Cmd + Option + I` pada macOS).
+3. Klik ikon **Toggle Device Toolbar** (ikon bergambar HP/tablet di pojok kiri atas DevTools) atau tekan `Ctrl + Shift + M`.
+4. Tarik garis batas layar (_resize handle_) ke kiri dan ke kanan untuk mengubah lebar resolusi:
+   - Saat lebar layar berada di bawah **768px**, Anda akan melihat card berjejer **1 kolom**.
+   - Saat Anda melebarkan resolusi di atas **768px**, layout langsung berpindah menjadi **2 kolom**.
+   - Saat lebar resolusi melewati **1024px**, layout langsung berpindah menjadi **3 kolom**.
+
+#### Eksperimen:
+
+Anda juga dapat menerapkan breakpoint pada ukuran teks atau warna untuk melihat efeknya secara instan:
+
+```tsx
+<>
+  {/* ukuran teks lebih kecil di layar HP, dan membesar secara proporsional di layar tablet/desktop */}
+  <h1 className="text-xl font-bold text-slate-900 md:text-3xl lg:text-5xl">
+    Daftar Artikel
+  </h1>
+
+  {/* background berubah warna sesuai ukuran layar perangkat */}
+  <div className="rounded-lg p-4 text-white bg-rose-500 md:bg-emerald-500 lg:bg-indigo-600">
+    Kecilkan atau lebarkan layar untuk melihat warna berubah!
+  </div>
+</>
+```
 
 ## 4. JavaScript, React, dan Next.js
 
