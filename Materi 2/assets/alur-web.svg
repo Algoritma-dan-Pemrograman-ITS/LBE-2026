@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Alur permintaan halaman web</title>
+  <desc id="desc">Pengguna mengetik URL, DNS mencari alamat IP, browser mengirim permintaan HTTPS ke server, lalu server mengembalikan HTML, CSS, JavaScript, dan aset.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#334155;stroke-width:2}.accent{fill:#eff6ff;stroke:#2563eb;stroke-width:2}.title{font:700 25px Arial,sans-serif;fill:#0f172a}.label{font:700 20px Arial,sans-serif;fill:#0f172a}.body{font:16px Arial,sans-serif;fill:#475569}.arrow{stroke:#2563eb;stroke-width:4;fill:none;marker-end:url(#head)}
+    </style>
+    <marker id="head" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="420" rx="24"/>
+  <text class="title" x="600" y="48" text-anchor="middle">Dari URL sampai halaman tampil</text>
+  <rect class="card" x="45" y="105" width="210" height="170" rx="18"/>
+  <text class="label" x="150" y="150" text-anchor="middle">1. Browser</text>
+  <text class="body" x="150" y="185" text-anchor="middle">Membaca URL</text>
+  <text class="body" x="150" y="213" text-anchor="middle">contoh.com/artikel</text>
+  <rect class="accent" x="335" y="105" width="210" height="170" rx="18"/>
+  <text class="label" x="440" y="150" text-anchor="middle">2. DNS</text>
+  <text class="body" x="440" y="185" text-anchor="middle">Domain diterjemahkan</text>
+  <text class="body" x="440" y="213" text-anchor="middle">menjadi alamat IP</text>
+  <rect class="card" x="625" y="105" width="210" height="170" rx="18"/>
+  <text class="label" x="730" y="150" text-anchor="middle">3. Server</text>
+  <text class="body" x="730" y="185" text-anchor="middle">Menerima request</text>
+  <text class="body" x="730" y="213" text-anchor="middle">dan menyiapkan response</text>
+  <rect class="accent" x="915" y="105" width="240" height="170" rx="18"/>
+  <text class="label" x="1035" y="150" text-anchor="middle">4. Halaman</text>
+  <text class="body" x="1035" y="185" text-anchor="middle">HTML + CSS + JS</text>
+  <text class="body" x="1035" y="213" text-anchor="middle">dirender menjadi UI</text>
+  <path class="arrow" d="M255 190 H325"/>
+  <path class="arrow" d="M545 190 H615"/>
+  <path class="arrow" d="M835 190 H905"/>
+  <path class="arrow" d="M730 285 C730 355 150 355 150 285"/>
+  <text class="body" x="440" y="386" text-anchor="middle">Response dikirim sebagai paket data melalui jaringan</text>
+</svg>

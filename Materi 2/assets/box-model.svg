@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+  <title id="title">CSS box model</title>
+  <desc id="desc">Lapisan box model dari luar ke dalam adalah margin, border, padding, dan content.</desc>
+  <defs><style>.title{font:700 26px Arial,sans-serif;fill:#0f172a}.label{font:700 19px Arial,sans-serif;fill:#0f172a}.note{font:16px Arial,sans-serif;fill:#334155}</style></defs>
+  <rect width="1000" height="540" rx="24" fill="#f8fafc"/>
+  <text class="title" x="500" y="46" text-anchor="middle">CSS Box Model</text>
+  <rect x="100" y="80" width="800" height="395" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text class="label" x="130" y="115">margin</text>
+  <rect x="175" y="130" width="650" height="295" rx="14" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+  <text class="label" x="205" y="165">border</text>
+  <rect x="250" y="180" width="500" height="195" rx="12" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text class="label" x="280" y="215">padding</text>
+  <rect x="335" y="230" width="330" height="95" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text class="label" x="500" y="270" text-anchor="middle">content</text>
+  <text class="note" x="500" y="298" text-anchor="middle">teks, gambar, atau elemen anak</text>
+  <text class="note" x="500" y="510" text-anchor="middle">Padding berada di dalam border. Margin memberi jarak terhadap elemen lain.</text>
+</svg>
